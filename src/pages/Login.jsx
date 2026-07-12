@@ -19,8 +19,8 @@ export default function Login() {
     setTimeout(() => {
       // We will allow either admin@alamispark.org / AdminSpark2026! or simpler local testing credentials admin / admin123
       const isValidAdmin = 
-        (email === 'admin@alamispark.org' && password === 'AdminSpark2026!') || 
-        (email === 'admin' && password === 'admin123');
+        (email === 'admin@alamispark.org' && password === 'AdminSpark2026!waluwa') || 
+        (email === 'admin' && password === 'admin123waluwa');
 
       if (isValidAdmin) {
         localStorage.setItem('alami_admin_authenticated', 'true');
@@ -123,11 +123,6 @@ export default function Login() {
             <span className="block text-[10px] text-gray-400 text-center uppercase tracking-wider font-semibold">
               Default Credentials
             </span>
-            <div className="mt-2 text-left bg-slate-50 p-3 rounded-lg border border-slate-100 text-[10px] space-y-1 text-slate-500 font-mono">
-              <div>Email: admin@alamispark.org</div>
-              <div>Password: AdminSpark2026!</div>
-              <div className="text-gray-400">Alternative fallback: admin / admin123</div>
-            </div>
           </div>
 
         </div>
