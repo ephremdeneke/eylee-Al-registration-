@@ -68,7 +68,7 @@ export default function Login() {
                   id="login-email"
                   type="text"
                   required
-                  placeholder="e.g. admin@alamispark.org"
+                  placeholder=" email@alamispark.org"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full bg-slate-50 border border-gray-200 rounded-xl pl-11 pr-4 py-3 text-sm focus:outline-none focus:bg-white focus:border-primary transition-all"

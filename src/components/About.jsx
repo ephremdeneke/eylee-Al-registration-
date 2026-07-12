@@ -35,8 +35,8 @@ export default function About() {
                 a youth-led organization dedicated to developing ethical, 
                 visionary, and impact-driven leaders.             </p>
             <p className="text-gray-700 font-medium border-l-4 border-secondary pl-4 py-1 italic">
-              "We believe leadership is not about titles—it is a"We believe that leadership is not about titles or positions—it is about character,
-               purpose, service, and the ability to create positive change."bout influence, service, innovation, and responsibility."
+              "We believe that leadership is not about titles or positions—it is about character,
+               purpose, service, and the ability to create positive change."
             </p>
              <p className="text-gray-700 font-medium border-l-4 border-secondary pl-4 py-1 italic">
              AL-AMI was created as EYLE's flagship leadership incubation program to help young people move from potential to purpose,
@@ -94,8 +94,7 @@ export default function About() {
             </div>
             <h3 className="text-2xl font-bold text-primary">Our Mission</h3>
             <p className="text-gray-600 leading-relaxed text-sm">
-              To inspire and equip young leaders wTo equip and empower young people with the mindset, character, skills, and vision needed to become ethical leaders, problem-solvers, and agents of positive change.ith practical leadership skills that create positive, lasting change across local communities.
-            </p>
+To equip and empower young people with the mindset, character, skills, and vision needed to become ethical leaders, problem-solvers, and agents of positive change.</p>
           </div>
 
           {/* Vision Card */}

@@ -28,7 +28,7 @@ export default function Contact() {
             Get In Touch
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight">
-            Contact AL-AMI Spark
+            Contact Us
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto text-sm">
             Have questions or want to partner with us? Drop us a message or use our official contacts.
@@ -67,7 +67,7 @@ export default function Contact() {
                   <div>
                     <span className="block text-xs text-gray-400 font-medium">Call Us</span>
                     <a href="tel:+251984049097" className="block text-sm font-semibold hover:text-secondary transition-colors">
-                      +251 98 404 9097
+                      +251 98 3393165
                     </a>
                   </div>
                 </div>

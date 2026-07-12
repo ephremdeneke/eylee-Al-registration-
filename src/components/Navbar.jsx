@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Menu, X, ShieldAlert, Sparkles, LogOut, LayoutDashboard } from 'lucide-react';
+import { Menu, X, LogOut } from 'lucide-react';
 import logo from '../assets/AL-AMI-removebg-preview.png';
 
 export default function Navbar() {
@@ -113,20 +113,12 @@ export default function Navbar() {
             {isAdmin ? (
               <button
                 onClick={handleLogout}
-                className="flex items-center gap-1.5 text-rose-600 hover:text-rose-800 font-semibold text-sm transition-colors"
+                className="flex items-center justify-center w-8 h-8 rounded-full text-rose-600 hover:text-rose-800 hover:bg-rose-50 transition-colors"
+                title="Log Out"
               >
-                <LogOut className="h-4 w-4" />
-                Log Out
+                <LogOut className="h-3.5 w-3.5" />
               </button>
-            ) : (
-              <Link
-                to="/login"
-                className="flex items-center gap-1.5 text-gray-600 hover:text-primary font-semibold text-sm transition-colors"
-              >
-                <ShieldAlert className="h-4 w-4" />
-                Admin Portal
-              </Link>
-            )}
+            ) : null}
             <Link
               to="/register"
               className="bg-primary hover:bg-primary-light text-white font-semibold text-sm px-6 py-2.5 rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/30 transform hover:-translate-y-0.5 transition-all duration-200"
@@ -140,20 +132,12 @@ export default function Navbar() {
             {isAdmin ? (
               <button
                 onClick={handleLogout}
-                className="text-rose-600 hover:text-rose-800 p-2"
+                className="text-rose-600 hover:text-rose-800 p-1.5"
                 title="Log Out"
               >
-                <LogOut className="h-5 w-5" />
+                <LogOut className="h-4 w-4" />
               </button>
-            ) : (
-              <Link
-                to="/login"
-                className="text-gray-600 hover:text-primary p-2"
-                title="Admin Portal"
-              >
-                <ShieldAlert className="h-5 w-5" />
-              </Link>
-            )}
+            ) : null}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-600 hover:text-primary p-2 focus:outline-none"

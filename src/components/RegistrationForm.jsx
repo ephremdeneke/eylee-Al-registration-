@@ -105,6 +105,12 @@ export default function RegistrationForm() {
       return;
     }
 
+    const hasPaymentProof = Boolean((data.paymentReference || '').trim() || screenshotBase64);
+    if (!hasPaymentProof) {
+      setSubmitError('Please provide either a Transaction Reference Code or upload a payment screenshot before submitting.');
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitError('');
 
@@ -455,14 +461,11 @@ export default function RegistrationForm() {
                   className={`w-full bg-slate-50 border ${errors.teamPreference ? 'border-rose-300' : 'border-gray-200'} rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:bg-white focus:border-primary transition-all`}
                 >
                   <option value="">Choose a Team</option>
-                  <option value="Community Service">Community Service</option>
-                  <option value="Media">Media</option>
-                  <option value="Technology">Technology</option>
-                  <option value="Event Management">Event Management</option>
-                  <option value="Research">Research</option>
-                  <option value="Education">Education</option>
-                  <option value="Innovation">Innovation</option>
-                  <option value="Any Team">Any Team</option>
+                  <option value="Team Envision">Team Envision</option>
+                  <option value="Team Ethics">Team Ethics</option>
+                  <option value="Team Equip">Team Equip</option>
+                  <option value="Team Endure">Team Endure</option>
+                  <option value="Team Extend">Team Extend</option>
                 </select>
                 {errors.teamPreference && <p className="text-rose-500 text-xs mt-1">{errors.teamPreference.message}</p>}
               </div>
@@ -482,7 +485,6 @@ export default function RegistrationForm() {
                   <option value="Telegram">Telegram</option>
                   <option value="Friend">Friend</option>
                   <option value="School">School/University</option>
-                  <option value="Church">Church</option>
                   <option value="Website">Website</option>
                   <option value="Other">Other</option>
                 </select>
@@ -519,10 +521,8 @@ export default function RegistrationForm() {
             <div className="bg-slate-50 border border-slate-100 p-6 rounded-2xl text-left space-y-4">
               <span className="block text-xs font-bold text-primary uppercase tracking-wider">Payment Instructions</span>
               <p className="text-xs text-gray-500 leading-relaxed">
-                Please transfer 500 ETB to any of our official banking options <span className="font-bold"> 1000740213788  Excellence youth leadership of Ethiopia Commercial Bank of Ethiopia</span>
-              . 
-                After paying, enter your Transaction Reference Number OR upload
-                a Screenshot of the payment confirmation below both options are supported.
+                Payment is required to complete your registration. Please transfer 500 ETB to our official banking account: <span className="font-bold">1000740213788 — Excellence Youth Leadership of Ethiopia, Commercial Bank of Ethiopia</span>.
+                After payment, please provide either your Transaction Reference Number or upload a screenshot of the payment confirmation below.
               </p>
             </div>
 
@@ -539,7 +539,7 @@ export default function RegistrationForm() {
                   {...register('paymentReference')}
                   className="w-full bg-slate-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:bg-white focus:border-primary transition-all"
                 />
-                <p className="text-[10px] text-gray-400 mt-1">Provide the reference ID from your banking receipt.</p>
+                <p className="text-[10px] text-gray-400 mt-1">Provide the transaction ID/reference from your banking receipt if you do not upload a screenshot.</p>
               </div>
 
               {/* Upload Screenshot File Input */}
@@ -559,7 +559,7 @@ export default function RegistrationForm() {
                     <Upload className="h-4 w-4 shrink-0 text-slate-400" />
                   </div>
                 </div>
-                <p className="text-[10px] text-gray-400 mt-1">Image receipt format (JPEG, PNG under 2MB).</p>
+                <p className="text-[10px] text-gray-400 mt-1">Upload a screenshot/receipt image (JPEG or PNG, under 2MB) if you do not provide a transaction ID.</p>
 
                 {/* Preview Thumbnail */}
                 {screenshotPreview && (

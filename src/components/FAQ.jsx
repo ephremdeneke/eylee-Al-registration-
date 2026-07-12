@@ -4,28 +4,28 @@ import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
 export default function FAQ() {
   const faqs = [
     {
-      q: 'What is the AL-AMI Spark Leadership Program?',
-      a: 'AL-AMI Spark is a youth leadership initiative that brings together passionate individuals to undergo intensive leadership workshops, receive professional mentorship, and design and execute collaborative community service projects.'
+      q: 'Who can apply?',
+      a: 'AL-AMI is open to students, young professionals, entrepreneurs, volunteers, and emerging leaders aged 18–35.'
     },
     {
-      q: 'What does the commitment fee cover and how do I pay?',
-      a: 'The commitment fee is a flat 500 ETB fee. It helps cover program materials, event logistics, workshops, and graduation certificates. You can make payments via bank transfer or mobile money (CBE, Telebirr, etc.), and you must provide the payment reference number or a screenshot of the transaction receipt during registration.'
+      q: 'Do I need prior leadership experience?',
+      a: 'No. AL-AMI is designed for both aspiring and experienced leaders.'
     },
     {
-      q: 'What is the duration of the program?',
-      a: 'The program is completed over several weekends, featuring intensive modules, interactive seminars, group discussions, and active team service project development and execution.'
+      q: 'Is there a registration fee?',
+      a: 'A small commitment fee may apply to support program logistics and participant engagement.'
     },
     {
-      q: 'How are teams assigned?',
-      a: 'During registration, you select your preferred team domains (such as Community Service, Media, Technology, Event Management, Research, Education, Innovation). The selection committee reviews these preferences alongside your background and scores to assign you to a suitable taskforce.'
+      q: 'Will I receive a certificate?',
+      a: 'Yes. Participants who successfully complete the program requirements will receive a certificate.'
     },
     {
-      q: 'How does the selection process work?',
-      a: 'After you register, our review team grades applications based on motivation, experience, and commitment. Shortlisted candidates are scored. Administrators can view, update, and approve selections via the program dashboard.'
+      q: 'Can I continue to the next level?',
+      a: 'Yes. Participants who complete a level become eligible to progress to the next stage of the incubator.'
     },
     {
-      q: 'Will I get a certificate?',
-      a: 'Yes, all participants who attend at least 90% of the training workshops and successfully complete their team service projects will receive an official leadership graduation certificate.'
+      q: 'Is AL-AMI only for people in Ethiopia?',
+      a: 'Currently, AL-AMI primarily serves Ethiopian youth while building a broader leadership community.'
     }
   ];
 
@@ -48,7 +48,7 @@ export default function FAQ() {
             Frequently Asked Questions
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto text-sm">
-            Everything you need to know about the AL-AMI Spark registration process and training experience.
+            Everything you need to know about the AL-AMI registration process and leadership experience.
           </p>
         </div>
 

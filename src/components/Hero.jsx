@@ -69,7 +69,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary leading-tight tracking-tight"
             >
-             Discover Your Purpose <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent"></span> with AL-AMI Incubator
+             Discover Your Purpose <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent"></span> with AL-AMI
             </motion.h1>
 
             <motion.p 
@@ -78,10 +78,10 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-gray-600 text-lg sm:text-xl leading-relaxed max-w-2xl font-light"
             >
-              Join Ethiopia's next generation of l Ignite Your Potential. Lead with Impact.
-              AL-AMI empowers young people to become visionary, ethical, and impact-driven leaders through 
-              a transformative leadership incubation journey.eaders through practical leadership training,
-              professional mentorship, team-based community projects, and real-world impact.
+        
+             AL-AMI empowers young people to become visionary, 
+             ethical, and impact-driven leaders through 
+             a transformative leadership incubation journey.
             </motion.p>
 
             {/* CTAs */}

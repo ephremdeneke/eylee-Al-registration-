@@ -52,7 +52,7 @@ export default function Benefits() {
             Program Advantages
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight">
-            Why Join AL-AMI Spark?
+            Why Join AL-AMI ?
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto text-sm">
             Our program is structured to provide value that extends far beyond standard classrooms, helping you develop tangible skills.
