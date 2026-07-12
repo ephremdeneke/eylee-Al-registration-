@@ -107,6 +107,39 @@ export default function Benefits() {
           </Link>
         </div>
 
+        {/* Bottom Benefits Summary */}
+        <div className="mt-12 bg-white border border-slate-200 rounded-3xl p-8 shadow-lg">
+          <div className="space-y-6">
+            <div className="space-y-4">
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-widest">
+                Benefits
+              </span>
+              <h3 className="text-3xl font-extrabold text-primary">What participants gain from AL-AMI</h3>
+              <p className="text-gray-600 leading-relaxed text-sm">
+                AL-AMI is designed to be more than a workshop. It is a step-by-step leadership journey that helps young people build confidence, find direction, and make a measurable impact.
+              </p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                'Discover their purpose and strengths',
+                'Develop confidence and self-awareness',
+                'Build leadership and communication skills',
+                'Learn practical tools for growth and impact',
+                'Connect with like-minded young leaders',
+                'Join the AL-AMI Fellowship community',
+                'Access future leadership opportunities',
+                'Receive certificates upon successful completion',
+              ].map((item) => (
+                <div key={item} className="rounded-3xl border border-slate-200 bg-slate-50 px-4 py-4 flex items-start gap-3 shadow-sm">
+                  <span className="mt-1 text-lg text-primary">✅</span>
+                  <p className="text-sm text-slate-700 leading-6">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

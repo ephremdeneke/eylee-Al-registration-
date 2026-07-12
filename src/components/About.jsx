@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 
 export default function About() {
   const values = [
-    { name: 'Leadership', desc: 'Inspiring others to unlock potential and drive positive change.', icon: Zap, color: 'text-primary bg-primary/10' },
-    { name: 'Integrity', desc: 'Honoring commitments and holding high ethical standards.', icon: ShieldCheck, color: 'text-emerald-700 bg-emerald-100' },
-    { name: 'Innovation', desc: 'Fostering creativity and design-thinking solutions.', icon: RefreshCw, color: 'text-indigo-700 bg-indigo-100' },
-    { name: 'Teamwork', desc: 'Collaborating effectively to achieve shared community goals.', icon: Users, color: 'text-amber-700 bg-amber-100' },
-    { name: 'Service', desc: 'Prioritizing community support and volunteer initiatives.', icon: Heart, color: 'text-red-700 bg-red-100' },
-    { name: 'Excellence', desc: 'Striving for highest quality in self-growth and impact.', icon: Award, color: 'text-primary bg-secondary/20' }
+    { name: 'Purpose', desc: 'Leadership begins with understanding who you are and why you exist.', icon: Target, color: 'text-primary bg-primary/10' },
+    { name: 'Integrity', desc: 'We choose honesty, accountability, and ethical leadership.', icon: ShieldCheck, color: 'text-emerald-700 bg-emerald-100' },
+    { name: 'Excellence', desc: 'We pursue continuous growth and strive to reach our highest potential.', icon: Award, color: 'text-indigo-700 bg-indigo-100' },
+    { name: 'Service', desc: 'We use leadership to serve others and create value for our communities.', icon: Heart, color: 'text-amber-700 bg-amber-100' },
+    { name: 'Growth', desc: 'We embrace learning, resilience, and lifelong development.', icon: RefreshCw, color: 'text-red-700 bg-red-100' },
+    { name: 'Impact', desc: 'We focus on creating meaningful and sustainable change.', icon: Zap, color: 'text-primary bg-secondary/20' }
   ];
 
   const highlights = [
@@ -31,12 +31,17 @@ export default function About() {
               Empowering Young Leaders in Ethiopia
             </h2>
             <p className="text-gray-600 leading-relaxed text-base">
-              AL-AMI Spark is a youth leadership development initiative dedicated to empowering young people with the knowledge, skills, and confidence needed to become impactful leaders in their communities.
-            </p>
+                AL-AMI is an initiative of Excellence Youth Leadership of Ethiopia (EYLE), 
+                a youth-led organization dedicated to developing ethical, 
+                visionary, and impact-driven leaders.             </p>
             <p className="text-gray-700 font-medium border-l-4 border-secondary pl-4 py-1 italic">
-              "We believe leadership is not about titles—it is about influence, service, innovation, and responsibility."
+              "We believe leadership is not about titles—it is a"We believe that leadership is not about titles or positions—it is about character,
+               purpose, service, and the ability to create positive change."bout influence, service, innovation, and responsibility."
             </p>
-            
+             <p className="text-gray-700 font-medium border-l-4 border-secondary pl-4 py-1 italic">
+             AL-AMI was created as EYLE's flagship leadership incubation program to help young people move from potential to purpose,
+              from vision to action, and from individual growth to lasting impact.
+            </p>
             {/* Highlights Grid */}
             <div className="grid grid-cols-2 gap-4 pt-4">
               {highlights.map((item, idx) => (
@@ -54,13 +59,28 @@ export default function About() {
               <div className="absolute right-0 bottom-0 opacity-10 translate-x-12 translate-y-12">
                 <GraduationCap className="h-80 w-80" />
               </div>
-              <h3 className="text-xl font-bold mb-6 text-secondary">Why AL-AMI Spark matters</h3>
+              <h3 className="text-xl font-bold mb-6 text-secondary">Why AL-AMI?</h3>
               <p className="text-gray-100 text-sm leading-relaxed mb-6">
-                Ethiopia’s youth are the foundation of tomorrow. However, traditional education systems rarely focus on active social accountability, public speaking, or design-thinking methodologies. 
+                Unlike traditional workshops that end after a single event, AL-AMI is a leadership incubation journey.
               </p>
-              <p className="text-gray-100 text-sm leading-relaxed">
-                Our curriculum fills this gap. We equip you with practical tools to identify problems, pitch solutions, assemble teams, and implement actual service projects that leave lasting community impact.
+              <p className="text-gray-100 text-sm leading-relaxed mb-6">
+                Participants don't simply attend training sessions—they embark on a structured pathway of personal growth, leadership development, community impact, and legacy building.
               </p>
+              <div className="space-y-3">
+                {[
+                  'Self-discovery',
+                  'Leadership development',
+                  'Practical application',
+                  'Community engagement',
+                  'Mentorship and peer learning',
+                  'Long-term growth through progressive levels',
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3 text-gray-100 text-sm leading-relaxed">
+                    <span className="mt-1 text-lg">✅</span>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -74,7 +94,7 @@ export default function About() {
             </div>
             <h3 className="text-2xl font-bold text-primary">Our Mission</h3>
             <p className="text-gray-600 leading-relaxed text-sm">
-              To inspire and equip young leaders with practical leadership skills that create positive, lasting change across local communities.
+              To inspire and equip young leaders wTo equip and empower young people with the mindset, character, skills, and vision needed to become ethical leaders, problem-solvers, and agents of positive change.ith practical leadership skills that create positive, lasting change across local communities.
             </p>
           </div>
 
@@ -85,8 +105,7 @@ export default function About() {
             </div>
             <h3 className="text-2xl font-bold text-primary">Our Vision</h3>
             <p className="text-gray-600 leading-relaxed text-sm">
-              To build a generation of ethical, innovative, and servant leaders across Ethiopia who lead with responsibility and excellence.
-            </p>
+To cultivate a generation of visionary, ethical, empowered, and resilient young leaders who drive sustainable transformation in Ethiopia and beyond.            </p>
           </div>
         </div>
 

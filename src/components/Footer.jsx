@@ -4,7 +4,7 @@ import { Send, Mail, Sparkles, MapPin, Phone } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-dark text-white border-t border-white/10 pt-16 pb-8">
+    <footer className="bg-emerald-900 text-white border-t border-white/10 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand Info */}
@@ -20,7 +20,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3 pt-2">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61585242568861"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 rounded-full bg-white/5 hover:bg-secondary flex items-center justify-center hover:text-primary-dark transition-all duration-300"
@@ -30,7 +30,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://telegram.org"
+                href="https://t.me/eye_lee"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 rounded-full bg-white/5 hover:bg-secondary flex items-center justify-center hover:text-primary-dark transition-all duration-300"
@@ -38,7 +38,7 @@ export default function Footer() {
                 <Send className="h-4 w-4" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/eyleaders1?igsh=Yml6azczY3AxdDZ0&utm_source=qr"
                 target="_blank"
                 rel="noreferrer"
                 className="w-9 h-9 rounded-full bg-white/5 hover:bg-secondary flex items-center justify-center hover:text-primary-dark transition-all duration-300"
@@ -98,11 +98,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-secondary shrink-0" />
-                <span className="text-gray-300 text-sm">+251 911 223 344</span>
+                <span className="text-gray-300 text-sm">+251 98 404 9097</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-secondary shrink-0" />
-                <span className="text-gray-300 text-sm">info@alamispark.org</span>
+                <span className="text-gray-300 text-sm">ethiopianyouthleadership@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -115,10 +115,7 @@ export default function Footer() {
             <p className="text-gray-300 text-sm leading-relaxed mb-4">
               Building ethical, innovative, and servant leaders to design and deliver social impact projects across Ethiopia.
             </p>
-            <div className="bg-white/5 p-3 rounded-lg border border-white/10">
-              <span className="block text-xs font-semibold text-secondary uppercase">Session Schedule</span>
-              <span className="block text-sm text-white mt-1">Weekends: 9:00 AM - 4:00 PM</span>
-            </div>
+          
           </div>
         </div>
 

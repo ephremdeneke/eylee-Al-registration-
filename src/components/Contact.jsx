@@ -54,9 +54,9 @@ export default function Contact() {
                   </div>
                   <div>
                     <span className="block text-xs text-gray-400 font-medium">Email Us</span>
-                    <a href="mailto:info@alamispark.org" className="block text-sm font-semibold hover:text-secondary transition-colors">
-                      info@alamispark.org
-                    </a>
+                    <a href="mailto:ethiopianyouthleadership@gmail.com" className="block text-sm font-semibold hover:text-secondary transition-colors">
+                      ethiopianyouthleadership@gmail.com
+                        </a>
                   </div>
                 </div>
 
@@ -66,8 +66,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <span className="block text-xs text-gray-400 font-medium">Call Us</span>
-                    <a href="tel:+251911223344" className="block text-sm font-semibold hover:text-secondary transition-colors">
-                      +251 911 223 344
+                    <a href="tel:+251984049097" className="block text-sm font-semibold hover:text-secondary transition-colors">
+                      +251 98 404 9097
                     </a>
                   </div>
                 </div>

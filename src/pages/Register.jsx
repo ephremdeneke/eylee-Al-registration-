@@ -24,17 +24,36 @@ export default function Register() {
         </div>
 
         {/* Heading Panel */}
-        <div className="text-center space-y-3 mb-10">
-          <div className="inline-flex items-center gap-1.5 bg-primary/10 text-primary px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">
-            <Sparkles className="h-3.5 w-3.5 text-secondary" />
-            Apply Now
+        <div className="text-center space-y-5 mb-10">
+          <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-900 px-4 py-2 rounded-full text-sm font-bold uppercase tracking-[0.35em] shadow-sm shadow-emerald-200">
+            <Sparkles className="h-4 w-4 text-emerald-700" />
+            Apply / Register Now
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight">
-            Register for AL-AMI Spark 2026
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-emerald-900 tracking-tight leading-snug">
+            Ready to Begin Your Leadership Journey?
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto text-sm leading-relaxed">
-            Fill out the form below. Please ensure all details are correct. All fields marked with * are required.
-          </p>
+          <div className="max-w-2xl mx-auto space-y-4 text-lg leading-8 text-slate-700">
+            <p className="font-semibold text-gray-900">
+              The future belongs to those who dare to dream, grow, and lead.
+            </p>
+            <p className="font-semibold text-gray-800">
+              Join the next generation of AL-AMI Fellows and take the first step toward becoming the leader you were created to be.
+            </p>
+          </div>
+
+          <div className="max-w-xl mx-auto mt-6 rounded-[32px] bg-emerald-50 border border-emerald-200 p-7 text-left shadow-lg shadow-emerald-100">
+            <p className="text-sm uppercase tracking-[0.25em] font-bold text-emerald-700">AL-AMI መነሻ (Spark)</p>
+            <p className="mt-3 text-2xl font-extrabold text-emerald-900">Level 1 — Registration Open</p>
+            <p className="mt-3 text-base font-semibold text-emerald-800">Every Visionary Starts With a Spark.</p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
+              <span className="inline-flex items-center gap-2 rounded-full bg-emerald-900 px-4 py-3 text-sm font-semibold text-white shadow-sm shadow-emerald-300">
+                🚀 Register Now
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-3 text-sm font-semibold text-emerald-900 border border-emerald-200">
+                🔗 Secure Your Seat Today
+              </span>
+            </div>
+          </div>
         </div>
 
         {/* Form Component */}

@@ -1,9 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles, Award, Users, BookOpen } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import photo1 from '../assets/photo_1_2026-07-12_15-52-17.jpg';
+import photo2 from '../assets/photo_2_2026-07-12_15-52-17.jpg';
+import photo3 from '../assets/photo_3_2026-07-12_15-52-17.jpg';
+import photo4 from '../assets/photo_4_2026-07-12_15-52-17.jpg';
+import photo5 from '../assets/photo_5_2026-07-12_15-52-17.jpg';
+import photo6 from '../assets/photo_6_2026-07-12_15-52-17.jpg';
+import photo7 from '../assets/photo_7_2026-07-12_15-52-17.jpg';
+import photo8 from '../assets/photo_8_2026-07-12_15-52-17.jpg';
+import photo9 from '../assets/photo_9_2026-07-12_15-52-17.jpg';
+import photo10 from '../assets/photo_10_2026-07-12_15-52-17.jpg';
+import photo11 from '../assets/photo_11_2026-07-12_15-52-17.jpg';
+import photo12 from '../assets/photo_12_2026-07-12_15-52-17.jpg';
+import photo13 from '../assets/photo_13_2026-07-12_15-52-17.jpg';
+import photo14 from '../assets/photo_14_2026-07-12_15-52-17.jpg';
 
 export default function Hero() {
+  const photos = [
+    photo1,
+    photo2,
+    photo3,
+    photo4,
+    photo5,
+    photo6,
+    photo7,
+    photo8,
+    photo9,
+    photo10,
+    photo11,
+    photo12,
+    photo13,
+    photo14,
+  ];
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % photos.length);
+    }, 5000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section id="home" className="relative min-h-screen pt-28 pb-16 flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-slate-100 to-sky-50">
       {/* Decorative background vectors */}
@@ -21,7 +60,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide"
             >
               <Sparkles className="h-4 w-4 text-secondary fill-secondary" />
-              <span>AL-AMI Spark Leadership Program 2026</span>
+              <span>AL-AMI Leadership Incubator 2026/2027</span>
             </motion.div>
 
             <motion.h1 
@@ -30,7 +69,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary leading-tight tracking-tight"
             >
-              Ignite Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Leadership Journey</span> with AL-AMI Spark
+             Discover Your Purpose <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent"></span> with AL-AMI Incubator
             </motion.h1>
 
             <motion.p 
@@ -39,7 +78,10 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-gray-600 text-lg sm:text-xl leading-relaxed max-w-2xl font-light"
             >
-              Join Ethiopia's next generation of leaders through practical leadership training, professional mentorship, team-based community projects, and real-world impact.
+              Join Ethiopia's next generation of l Ignite Your Potential. Lead with Impact.
+              AL-AMI empowers young people to become visionary, ethical, and impact-driven leaders through 
+              a transformative leadership incubation journey.eaders through practical leadership training,
+              professional mentorship, team-based community projects, and real-world impact.
             </motion.p>
 
             {/* CTAs */}
@@ -101,68 +143,21 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right Column: Premium Collage Grid */}
+          {/* Right Column: Hero slideshow */}
           <div className="lg:col-span-5 relative mt-8 lg:mt-0">
-            <div className="relative w-full max-w-[450px] mx-auto h-[480px]">
-              {/* Decorative Circle Grid */}
-              <div className="absolute -left-6 -bottom-6 w-32 h-32 bg-[radial-gradient(#0f4c81_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
-              
-              {/* Image 1: Main collaboration card */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, rotate: -2 }}
-                animate={{ opacity: 1, scale: 1, rotate: -2 }}
-                transition={{ duration: 0.7, delay: 0.2 }}
-                className="absolute top-0 right-4 w-[280px] h-[200px] rounded-2xl overflow-hidden shadow-xl border-4 border-white"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1531538606174-0f90ff5dce83?q=80&w=600"
-                  alt="Young leaders collaborating"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            <div className="relative w-full max-w-[450px] mx-auto h-[480px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={index}
+                  src={photos[index]}
+                  alt={`Hero ${index + 1}`}
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -30 }}
+                  transition={{ duration: 1.5, ease: 'easeInOut' }}
+                  className="w-full h-full object-cover"
                 />
-              </motion.div>
-
-              {/* Image 2: Public speaking */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, rotate: 3 }}
-                animate={{ opacity: 1, scale: 1, rotate: 3 }}
-                transition={{ duration: 0.7, delay: 0.3 }}
-                className="absolute top-[160px] left-0 w-[240px] h-[180px] rounded-2xl overflow-hidden shadow-xl border-4 border-white z-10"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=600"
-                  alt="Public speaking training"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </motion.div>
-
-              {/* Image 3: Community impact */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.4 }}
-                className="absolute bottom-0 right-8 w-[250px] h-[190px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white z-20"
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1559027615-cd96e53a24a4?q=80&w=600"
-                  alt="Community service activity"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </motion.div>
-              
-              {/* Highlight badge floating */}
-              <motion.div 
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-[280px] right-2 bg-white px-5 py-3.5 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3 z-30"
-              >
-                <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-primary font-bold text-sm">
-                  500+
-                </div>
-                <div>
-                  <span className="block text-xs text-gray-500 font-medium">Alumni Network</span>
-                  <span className="block text-sm font-bold text-primary">Active Leaders</span>
-                </div>
-              </motion.div>
+              </AnimatePresence>
             </div>
           </div>
         </div>

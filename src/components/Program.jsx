@@ -1,15 +1,92 @@
 import React from 'react';
-import { CheckCircle2, UserCheck, CalendarRange, Users, Sparkles, BookOpen, GraduationCap, ClipboardList } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Program() {
-  const steps = [
-    { title: 'Registration', desc: 'Fill out and submit the online application form with payment reference.', icon: ClipboardList },
-    { title: 'Application Review', desc: 'Our screening committee reviews all backgrounds, leadership essays, and details.', icon: UserCheck },
-    { title: 'Selection', desc: 'Successful applicants are officially selected and announced.', icon: Sparkles },
-    { title: 'Training', desc: 'Participate in intensive leadership workshops and skill modules.', icon: BookOpen },
-    { title: 'Team Assignment', desc: 'Get assigned to a project team matching your interests and goals.', icon: Users },
-    { title: 'Projects', desc: 'Collaborate to solve real challenges through community service campaigns.', icon: CalendarRange },
-    { title: 'Graduation', desc: 'Graduate, receive certificates, and join our active alumni network.', icon: GraduationCap }
+  const levels = [
+    {
+  level: "Level 1",
+  name: "AL-AMI መነሻ (Spark)",
+  status: "OPEN FOR REGISTRATION",
+
+  theme: "Every Visionary Starts With a Spark",
+
+  description:
+    "The first level of the Excellence Youth Leadership of Ethiopia (EYLE) Leadership Incubator. A high-intensity half-day experience designed to spark your leadership potential and prepare you to lead with Character, Competence, and Clarity.",
+
+  focus: [
+    "Visionary Mindset",
+    "3-Level Vision (Micro, Meso & Macro)",
+    "Lead Yourself",
+    "Lead Your Circle",
+    "Lead Your Movement",
+    "Character, Competence & Clarity"
+  ],
+
+  questions: [
+    "Who can I become?",
+    "How does leadership grow?",
+    "What is holding me back?",
+    "What future am I committed to creating?"
+  ],
+
+  event: {
+    date: "July 25, 2026",
+    location: "Russian House, Piassa, Addis Ababa"
+  },
+
+  contact: {
+    email: "info@eyleaders.org",
+    phone: "+251 983393165"
+  },
+
+  register: true
+},
+    {
+      level: 'Level 2',
+      name: 'AL-AMI ንድፍ (Design)',
+      status: 'Locked',
+      theme: 'Transform Vision into Action',
+      focus: [
+        'Goal setting',
+        'Strategic planning',
+        'Personal development planning',
+        'Project design',
+        'Problem solving'
+      ],
+      outcome: ['Participants develop a practical roadmap for achieving their vision'],
+      note: 'Complete Spark to unlock Design.'
+    },
+    {
+      level: 'Level 3',
+      name: 'AL-AMI ተፅዕኖ (Impact)',
+      status: 'Locked',
+      theme: 'Lead Change and Create Impact',
+      focus: [
+        'Leadership skills',
+        'Communication',
+        'Team building',
+        'Community engagement',
+        'Influence and service'
+      ],
+      outcome: ['Participants gain the skills needed to create positive change in their communities'],
+      note: 'Complete Design to unlock Impact.'
+    },
+    {
+      level: 'Level 4',
+      name: 'AL-AMI አሻራ (Legacy)',
+      status: 'Locked',
+      theme: 'Build What Outlasts You',
+      focus: [
+        'Legacy thinking',
+        'Ethical leadership',
+        'Mentorship',
+        'Sustainability',
+        'Multiplying impact'
+      ],
+      outcome: ['Participants learn how to develop leaders, sustain initiatives, and create long-term change'],
+      note: 'Complete Impact to unlock Legacy.'
+    }
   ];
 
   const eligibility = [
@@ -29,59 +106,137 @@ export default function Program() {
             Program Structure
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight">
-            The AL-AMI Spark Journey
+            The AL-AMI Journey
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto text-sm">
-            Learn more about the stages of the leadership training, from initial registration to graduation.
+          <p className="text-gray-500 max-w-2xl mx-auto text-sm">
+            Learn more about the levels of the leadership incubator, from initial spark level to building a legacy.
           </p>
         </div>
 
-        {/* Timeline Component */}
-        <div className="relative mb-24">
-          {/* Vertical line connector (desktop/tablet) */}
-          <div className="absolute left-[30px] md:left-1/2 top-4 bottom-4 w-1 bg-gradient-to-b from-primary via-accent to-secondary rounded-full -translate-x-1/2 hidden md:block"></div>
-          
-          <div className="space-y-12 relative">
-            {steps.map((step, idx) => {
-              const IconComp = step.icon;
-              const isEven = idx % 2 === 0;
-              
-              return (
-                <div key={idx} className="flex flex-col md:flex-row items-start md:items-center relative">
-                  {/* Circle Indicator */}
-                  <div className="absolute left-[30px] md:left-1/2 w-12 h-12 rounded-full bg-white border-4 border-primary flex items-center justify-center text-primary z-10 -translate-x-1/2 shadow-md">
-                    <IconComp className="h-5 w-5" />
+        {/* Journey Levels */}
+        <div className="grid gap-8 mb-20">
+          {levels.map((item, idx) => (
+            <div
+              key={idx}
+              className={`rounded-3xl p-8 shadow-sm transition-shadow duration-300 ${idx === 0 ? 'bg-white/95 border border-emerald-200 hover:shadow-2xl' : 'bg-white border border-slate-200 hover:shadow-xl'}`}
+            >
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+                <div>
+                  <span className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-bold uppercase tracking-[0.25em] ${idx === 0 ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-gray-600'}`}>
+                    {item.level}
+                  </span>
+                  <h3 className={`text-2xl sm:text-3xl font-extrabold mt-2 ${idx === 0 ? 'text-emerald-900' : 'text-primary'}`}>{item.name}</h3>
+                  {idx === 0 && item.theme && (
+                    <p className="mt-3 text-sm text-emerald-700 max-w-2xl">{item.theme}</p>
+                  )}
+                </div>
+                <div className={`inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold ${item.status === 'Locked' ? 'bg-slate-100 text-gray-600' : 'bg-emerald-100 text-emerald-800'}`}>
+                  {item.status}
+                </div>
+              </div>
+
+              {idx === 0 ? (
+                <div className="space-y-6">
+                  <div className="rounded-3xl bg-emerald-50 border border-emerald-200 p-6">
+                    <p className="text-gray-700 leading-7 text-sm">{item.description}</p>
                   </div>
 
-                  {/* Left spacer / right box on desktop */}
-                  <div className={`w-full md:w-1/2 pl-12 md:pl-0 md:pr-12 md:text-right ${isEven ? 'md:order-1' : 'md:order-3'}`}>
-                    {isEven && (
-                      <div className="bg-slate-50 border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-                        <span className="text-xs font-bold text-secondary-dark uppercase block mb-1">Step {idx + 1}</span>
-                        <h4 className="font-extrabold text-lg text-primary mb-2">{step.title}</h4>
-                        <p className="text-gray-500 text-xs leading-relaxed">{step.desc}</p>
-                      </div>
-                    )}
+                  <div className="grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
+                    <div className="rounded-3xl bg-white border border-emerald-200 p-6">
+                      <h4 className="font-bold text-lg text-emerald-900 mb-4">What You'll Master</h4>
+                      <p className="text-sm text-emerald-700 mb-4">As an Al-ami Fellow, you will master the visionary mindset needed to lead yourself, your circle, and your movement.</p>
+                      <ul className="grid gap-3 text-gray-700 text-sm">
+                        {item.focus.map((focusItem) => (
+                          <li key={focusItem} className="flex items-start gap-3">
+                            <span className="mt-1 text-emerald-600 text-lg">•</span>
+                            <span>{focusItem}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="rounded-3xl bg-white border border-emerald-200 p-6">
+                      <h4 className="font-bold text-lg text-emerald-900 mb-4">Key Questions</h4>
+                      <ul className="grid gap-3 text-gray-700 text-sm">
+                        {item.questions.map((question) => (
+                          <li key={question} className="rounded-2xl bg-emerald-50 border border-emerald-100 p-3">
+                            {question}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
 
-                  {/* Spacer for vertical layout */}
-                  <div className="w-12 h-12 hidden md:block md:order-2 shrink-0"></div>
+                  <div className="grid gap-6 lg:grid-cols-2">
+                    <div className="rounded-3xl bg-emerald-50 border border-emerald-200 p-6">
+                      <h4 className="font-bold text-lg text-emerald-900 mb-4">Event Details</h4>
+                      <p className="text-emerald-700 text-sm leading-7"><strong>Date:</strong> {item.event.date}</p>
+                      <p className="text-emerald-700 text-sm leading-7"><strong>Location:</strong> {item.event.location}</p>
+                    </div>
+                    <div className="rounded-3xl bg-emerald-50 border border-emerald-200 p-6">
+                      <h4 className="font-bold text-lg text-emerald-900 mb-4">Contact</h4>
+                      <p className="text-emerald-700 text-sm leading-7"><strong>Email:</strong> {item.contact.email}</p>
+                      <p className="text-emerald-700 text-sm leading-7"><strong>Phone:</strong> {item.contact.phone}</p>
+                    </div>
+                  </div>
 
-                  {/* Right box / left spacer on desktop */}
-                  <div className={`w-full md:w-1/2 pl-12 md:pl-12 md:text-left ${isEven ? 'md:order-3' : 'md:order-1'}`}>
-                    {!isEven && (
-                      <div className="bg-slate-50 border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-                        <span className="text-xs font-bold text-secondary-dark uppercase block mb-1">Step {idx + 1}</span>
-                        <h4 className="font-extrabold text-lg text-primary mb-2">{step.title}</h4>
-                        <p className="text-gray-500 text-xs leading-relaxed">{step.desc}</p>
-                      </div>
-                    )}
+                  <div className="rounded-3xl bg-emerald-900 border border-emerald-800 p-6 text-white">
+                    <p className="text-sm uppercase tracking-[0.2em] text-emerald-200 font-semibold">About this level</p>
+                    <p className="mt-4 leading-7 text-sm text-emerald-100">This is not a typical seminar; it is a high-intensity half-day experience designed to spark your leadership potential and equip you with the mindset, character, and vision required to create meaningful impact.</p>
+                    <div className="mt-6">
+                      <Link
+                        to="/register"
+                        className="inline-flex items-center justify-center rounded-full bg-emerald-200 px-6 py-3 text-sm font-semibold text-emerald-900 shadow-lg hover:bg-emerald-300 transition-colors duration-200"
+                      >
+                        Register for AL-AMI መነሻ (Spark)
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+              ) : (
+                <div className="space-y-4">
+                  <div className="rounded-3xl bg-slate-50 border border-slate-200 p-6">
+                    <h4 className="font-bold text-lg text-primary">Theme</h4>
+                    <p className="text-gray-600 mt-2">{item.theme}</p>
+                  </div>
+
+                  <div className="grid gap-4 md:grid-cols-2">
+                    <div className="rounded-3xl bg-slate-50 border border-slate-200 p-6">
+                      <h4 className="font-bold text-lg text-primary mb-3">Key Focus Areas</h4>
+                      <ul className="space-y-2 text-gray-600 text-sm">
+                        {item.focus.map((focusItem) => (
+                          <li key={focusItem} className="flex items-start gap-3">
+                            <span className="mt-1 text-primary text-lg">•</span>
+                            <span>{focusItem}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="rounded-3xl bg-slate-50 border border-slate-200 p-6">
+                      <h4 className="font-bold text-lg text-primary mb-3">Outcome</h4>
+                      <ul className="space-y-2 text-gray-600 text-sm">
+                        {item.outcome.map((outcomeItem) => (
+                          <li key={outcomeItem} className="flex items-start gap-3">
+                            <span className="mt-1 text-secondary text-lg">✓</span>
+                            <span>{outcomeItem}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {item.note && (
+                    <div className="rounded-3xl bg-slate-50 border border-slate-200 p-6">
+                      <p className="text-gray-600 text-sm font-semibold">🔒 {item.note}</p>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
+
+        {/* Eligibility Criteria Cards */}
 
         {/* Eligibility Criteria Cards */}
         <div className="bg-gradient-to-br from-slate-900 to-primary-dark rounded-3xl p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">

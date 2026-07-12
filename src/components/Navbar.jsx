@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X, ShieldAlert, Sparkles, LogOut, LayoutDashboard } from 'lucide-react';
+import logo from '../assets/AL-AMI-removebg-preview.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -78,13 +79,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="bg-primary p-2 rounded-lg flex items-center justify-center text-white shadow-md shadow-primary/20 group-hover:scale-105 transition-transform duration-200">
-              <Sparkles className="h-5 w-5 text-secondary" />
-            </div>
-            <div className="flex flex-col text-left">
-              <span className="font-bold text-lg md:text-xl text-primary leading-none tracking-tight">
-                AL-AMI SPARK
+          <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-4 group cursor-pointer">
+            <img src={logo} alt="AL-AML" className="h-12 md:h-20 w-auto object-contain" />
+            <div className="hidden md:flex flex-col text-left">
+              <span className="font-bold md:text-lg text-primary leading-none tracking-tight">
+                AL-AMI Leadership Incubator
               </span>
               <span className="text-[10px] text-gray-500 font-medium tracking-widest mt-0.5">
                 LEADERSHIP PROGRAM
