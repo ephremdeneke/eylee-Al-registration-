@@ -115,16 +115,18 @@ function handleCreate(data) {
     }
   }
   
-  // B. Generate Registration ID (e.g. ALAMI-2026-00001)
+  // B. Generate Registration ID (e.g. ALAMI-2-2026-00001)
   let nextNum = 1;
-  if (values.length > 1) {
-    const lastId = values[values.length - 1][0];
-    if (lastId && lastId.toString().startsWith("ALAMI-2026-")) {
-      const numPart = lastId.toString().split("-")[2];
+  const sheetData = sheet.getDataRange().getValues();
+  if (sheetData.length > 1) {
+    const lastId = sheetData[sheetData.length - 1][0];
+    if (lastId && lastId.toString().startsWith("ALAMI-2-2026-")) {
+      const parts = lastId.toString().split("-");
+      const numPart = parts[parts.length - 1];
       nextNum = parseInt(numPart) + 1;
     }
   }
-  const regId = "ALAMI-2026-" + String(nextNum).padStart(5, '0');
+  const regId = "ALAMI-2-2026-" + String(nextNum).padStart(5, '0');
   const regDate = new Date().toISOString();
 
   // C. Upload Payment Screenshot to Google Drive (if present)
@@ -158,8 +160,8 @@ function handleCreate(data) {
     data.teamPreference,            // 16. Preferred Team
     data.referralSource,            // 17. Referral Source
     data.participantCategory || 'Youth Leader', // 18. Participant Category
-    "500",                          // 19. Commitment Fee
-    data.paymentReference ? "Pending" : "Unpaid", // 20. Payment Status
+    "0",                            // 19. Commitment Fee
+    "Free",                         // 20. Payment Status
     data.paymentReference || "",    // 21. Payment Reference
     screenshotUrl,                  // 22. Payment Screenshot
     data.agreement ? "Yes" : "No",  // 23. Commitment Agreement

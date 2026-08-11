@@ -31,8 +31,8 @@ export default function Program() {
   ],
 
   event: {
-    date: "July 25, 2026",
-    location: "Russian House, Piassa, Addis Ababa"
+    date: "August 29, 2026/ ነሀሴ 23 2018 ዓ.ም",
+    location: "Adama, Oromia, Ethiopia (Exact venue revealed to confirmed Fellows)"
   },
 
   contact: {

@@ -105,11 +105,7 @@ export default function RegistrationForm() {
       return;
     }
 
-    const hasPaymentProof = Boolean((data.paymentReference || '').trim() || screenshotBase64);
-    if (!hasPaymentProof) {
-      setSubmitError('Please provide either a Transaction Reference Code or upload a payment screenshot before submitting.');
-      return;
-    }
+    // No payment proof validation needed as program is free
 
     setIsSubmitting(true);
     setSubmitError('');
@@ -147,7 +143,7 @@ export default function RegistrationForm() {
     { title: 'Personal Info', desc: 'Who you are' },
     { title: 'Background', desc: 'Education & experience' },
     { title: 'Motivation', desc: 'Interests & goals' },
-    { title: 'Payment', desc: 'Commitment fee' }
+    { title: 'Commitment', desc: 'Program commitment' }
   ];
 
   return (
@@ -494,12 +490,12 @@ export default function RegistrationForm() {
           </div>
         )}
 
-        {/* STEP 4: Payment Verification & Commitment */}
+        {/* STEP 4: Program Commitment */}
         {step === 4 && (
           <div className="space-y-6">
             <h3 className="text-xl font-bold text-primary flex items-center gap-2 border-b border-gray-100 pb-3">
               <ClipboardCheck className="h-5 w-5 text-accent" />
-              Commitment & Payment Verification
+              Program Commitment
             </h3>
 
             {/* Fee Info Callout */}
@@ -512,61 +508,9 @@ export default function RegistrationForm() {
               <div className="flex justify-between items-center">
                 <div>
                   <span className="block text-sm font-bold text-primary">Required Commitment Fee</span>
-                  <span className="block text-xs text-gray-500">Flat rate fee for program entry & materials</span>
+                  <span className="block text-xs text-gray-500">Program entry & learning materials</span>
                 </div>
-                <span className="text-2xl font-extrabold text-primary">500 ETB</span>
-              </div>
-            </div>
-
-            <div className="bg-slate-50 border border-slate-100 p-6 rounded-2xl text-left space-y-4">
-              <span className="block text-xs font-bold text-primary uppercase tracking-wider">Payment Instructions</span>
-              <p className="text-xs text-gray-500 leading-relaxed">
-                Payment is required to complete your registration. Please transfer 500 ETB to our official banking account: <span className="font-bold">1000740213788 — Excellence Youth Leadership of Ethiopia, Commercial Bank of Ethiopia</span>.
-                After payment, please provide either your Transaction Reference Number or upload a screenshot of the payment confirmation below.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Payment Reference Text Input */}
-              <div>
-                <label htmlFor="reg-paymentReference" className="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">
-                  Transaction Reference Number
-                </label>
-                <input
-                  id="reg-paymentReference"
-                  type="text"
-                  placeholder="e.g. FT2619283748"
-                  {...register('paymentReference')}
-                  className="w-full bg-slate-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:bg-white focus:border-primary transition-all"
-                />
-                <p className="text-[10px] text-gray-400 mt-1">Provide the transaction ID/reference from your banking receipt if you do not upload a screenshot.</p>
-              </div>
-
-              {/* Upload Screenshot File Input */}
-              <div>
-                <label className="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">
-                  Upload Screenshot / Receipt
-                </label>
-                <div className="relative">
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handleFileChange}
-                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
-                  />
-                  <div className="w-full bg-slate-50 border border-dashed border-gray-300 hover:border-primary rounded-xl px-4 py-3 text-sm flex items-center justify-between text-gray-500 transition-colors">
-                    <span className="truncate max-w-[180px]">{fileName || 'Choose image receipt...'}</span>
-                    <Upload className="h-4 w-4 shrink-0 text-slate-400" />
-                  </div>
-                </div>
-                <p className="text-[10px] text-gray-400 mt-1">Upload a screenshot/receipt image (JPEG or PNG, under 2MB) if you do not provide a transaction ID.</p>
-
-                {/* Preview Thumbnail */}
-                {screenshotPreview && (
-                  <div className="mt-3 relative w-20 h-20 rounded-lg overflow-hidden border border-gray-200">
-                    <img src={screenshotPreview} alt="Receipt Preview" className="w-full h-full object-cover" />
-                  </div>
-                )}
+                <span className="text-2xl font-extrabold text-emerald-600">Free (0 ETB)</span>
               </div>
             </div>
 
