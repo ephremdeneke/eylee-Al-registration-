@@ -125,7 +125,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-center">
           <p className="text-gray-400 text-xs">
-            &copy; {new Date().getFullYear()} AL-AMI Spark Leadership Program. All rights reserved.
+            &copy; {new Date().getFullYear()} AL-AMI Spark Leadership Program. All rights reserved. Developed by Ephrem Deneke
           </p>
           <div className="flex gap-6 text-xs">
             <a href="#privacy" className="text-gray-400 hover:text-white transition-colors">
