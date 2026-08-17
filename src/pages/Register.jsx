@@ -45,6 +45,12 @@ export default function Register() {
             <p className="text-sm uppercase tracking-[0.25em] font-bold text-emerald-700">AL-AMI መነሻ (Spark)</p>
             <p className="mt-3 text-2xl font-extrabold text-emerald-900">Level 1 — Registration Open</p>
             <p className="mt-3 text-base font-semibold text-emerald-800">Every Visionary Starts With a Spark.</p>
+            <p className="mt-3 text-base font-semibold text-emerald-3500">
+                This training is open to everyone who lives in Adama or can travel there on their own.
+                Please note that we provide the training for free,
+                but we do not offer any transportation assistance.
+              </p>
+
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
               <span className="inline-flex items-center gap-2 rounded-full bg-emerald-900 px-4 py-3 text-sm font-semibold text-white shadow-sm shadow-emerald-300">
                 🚀 Register Now
