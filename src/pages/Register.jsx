@@ -34,7 +34,7 @@ export default function Register() {
           </h2>
           <div className="max-w-2xl mx-auto space-y-4 text-lg leading-8 text-slate-700">
                 <p className="mt-3 text-base font-semibold text-emerald-3500">
-                This training is open to everyone who lives in Adama or can travel there on their own.
+                This training is open to everyone who lives in Ambo or can travel there on their own.
                 Please note that we provide the training for free,
                 but we do not offer any transportation assistance.
               </p>

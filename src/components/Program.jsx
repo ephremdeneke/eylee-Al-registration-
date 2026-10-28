@@ -31,8 +31,8 @@ export default function Program() {
   ],
 
   event: {
-    date: "August 29, 2026/ ነሀሴ 23 2018 ዓ.ም",
-    location: "Adama, Oromia, Ethiopia (Exact venue revealed to confirmed Fellows)"
+    date: "November 14, 2026/ ህዳር 5 2019 ዓ.ም",
+    location: "Ambo, Oromia, Ethiopia (Exact venue revealed to confirmed Fellows)"
   },
 
   contact: {
