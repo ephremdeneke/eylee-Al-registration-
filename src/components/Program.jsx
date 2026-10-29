@@ -7,7 +7,7 @@ export default function Program() {
     {
   level: "Level 1",
   name: "AL-AMI መነሻ (Spark)",
-  status: "OPEN FOR REGISTRATION",
+  status: "REGISTRATION CLOSED",
 
   theme: "Every Visionary Starts With a Spark",
 
@@ -130,7 +130,7 @@ export default function Program() {
                     <p className="mt-3 text-sm text-emerald-700 max-w-2xl">{item.theme}</p>
                   )}
                 </div>
-                <div className={`inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold ${item.status === 'Locked' ? 'bg-slate-100 text-gray-600' : 'bg-emerald-100 text-emerald-800'}`}>
+                <div className={`inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold ${item.status === 'Locked' ? 'bg-slate-100 text-gray-600' : item.status === 'REGISTRATION CLOSED' ? 'bg-amber-100 text-amber-900 border border-amber-300' : 'bg-emerald-100 text-emerald-800'}`}>
                   {item.status}
                 </div>
               </div>
@@ -186,9 +186,9 @@ export default function Program() {
                     <div className="mt-6">
                       <Link
                         to="/register"
-                        className="inline-flex items-center justify-center rounded-full bg-emerald-200 px-6 py-3 text-sm font-semibold text-emerald-900 shadow-lg hover:bg-emerald-300 transition-colors duration-200"
+                        className="inline-flex items-center justify-center rounded-full bg-amber-100 hover:bg-amber-200 px-6 py-3 text-sm font-semibold text-amber-950 shadow-md transition-colors duration-200"
                       >
-                        Register for AL-AMI መነሻ (Spark)
+                        Registration Closed
                       </Link>
                     </div>
                   </div>
